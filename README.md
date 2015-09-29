@@ -1,7 +1,19 @@
 ## regex-derivatives
 
-Simple regex matcher written in Haskell that uses derivatives instead of finite automata.
+Simple regex engine written in Haskell.
 
-The implementation and idea is based on a blog post by [Matt Might][Matt's blog]
+Instead of using backtracking or finite automata to match strings, it uses derivatives.  The idea and algorithm are taken from a blog post by [Matt Might][Matt's blog].
+
+### Installation
+    git clone https://github.com/dwnusbaum/regex-derivatives.git
+    cd regex-derivatives
+    cabal update && cabal install
+
+### Use
+    regex '[abc]*d?' '123aaacbccbd'
+    regex 'Str..' "$(cat ./Main.hs)"
+
+The output is colored like the output of [ag][the_silver_searcher].
 
 [Matt's blog]: http://matt.might.net/articles/implementation-of-regular-expression-matching-in-scheme-with-derivatives/
+[the_silver_searcher]: https://github.com/ggreer/the_silver_searcher
